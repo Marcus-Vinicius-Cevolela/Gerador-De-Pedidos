@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gerador de Pedidos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Gerador de Pedidos</h1>
+        <p>*O arquivo deve ser .xlsx*</p>
+        <p id="file-selected"></p>
+        <form action="{{ url_for('upload') }}" method="post" enctype="multipart/form-data" class="upload-btn-wrapper">
+            <label class="btn">
+                Escolher Arquivo<input type="file" name="file" accept=".xlsx" style="display: none;" onchange="displayFileName()">
+            </label>
+            <button type="submit" class="btn">Enviar</button>
+        </form>
+    </div>
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+</body>
+</html>
